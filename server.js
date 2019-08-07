@@ -14,15 +14,14 @@ const Discord= require("discord.js");
 const client = new Discord.Client();
 const bot = client;
 const fs = require('fs')
-/////////////////JSON FILE/////////////////////////
+/////////////////JSON FILE///////////////////////////////////////////////////////////
 const serverID = require('./config/serverID.json');
 const roleID = require('./config/roleID.json');
 const token = require('./config/token.json');
 const prefix = require('./config/prefix.json');
 const embed = require('./embed/pingpong.json');
-const owner = require('./config/ownerID.json');
 
-///////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////
 
 const keepalive = require('express-glitch-keepalive');
 app.use(keepalive);
@@ -133,16 +132,11 @@ client.on("message", async message => {
    message.channel.send("Information Loading......").then(msg=>msg.delete(2000)).then(msg=>msg.channel.send(botembed))
  }
   if(message.content.startsWith(`${prefix.pr}restart`)) {
-	let owneris = owner.OwnerID
-     let embed = new Discord.RichEmbed()
-  .setTitle("Restart")
-  .setDescription(`Sorry, the \`restart\` command can only be executed by the Developer.\n- only ADMINISTRATOR permission can use this\n- only <@!${owneris}> can use it`)
-  .setColor(`RANDOM`)
-  .setImage('https://i.imgur.com/WSJZUb2.gif')
-  if(message.author.id !== `${owner.OwnerID}` || !message.guild.member(message.author).hasPermission('ADMINISTRATOR')) return message.channel.send(embed).then(msg=>msg.delete(10000))
   
-message.channel.send(`Restarted in ${Math.floor(bot.ping)}ms`).then(msg=>msg.delete(7000)).then(() =>{
-process.exit(1);
+  if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send(`${message.author}You Must have \`MANAGE_MASSAGE\` to run this command.`);
+    
+  message.channel.send(`${message.author} Restarted in ${Math.floor(bot.ping)}ms`).then(msg=>msg.delete(9000)).then(() =>{
+  process.exit(1);
 })
     
   }})
