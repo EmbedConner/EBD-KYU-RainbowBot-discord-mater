@@ -3,7 +3,7 @@ The Discord Rainbow bot secure Code Using Discord.js
 # Installation
 1.Put your ownerID, roleID, serverID, bot_Token in to config.json file. <br>
 ```
-roleID.json / serverID.json / token.json / ownerID.json
+roleID.json / serverID.json / token.json 
 ```
 2.Install package <br>
 ```
