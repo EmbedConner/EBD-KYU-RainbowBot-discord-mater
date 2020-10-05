@@ -5,12 +5,12 @@ The Discord Rainbow bot secure Code Using Discord.js
 ```
 roleID.json / serverID.json / token.json 
 ```
-2.Install package <br>
+2.Install the package <br>
 ```
 npm install
 ```
 3.Run the bot 
 ```
-node server.js
+node .
 ```
 # Enjoy your Rainbowbot
