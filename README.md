@@ -1,7 +1,7 @@
 # EBD-KYU-RainbowBot-discord-mater
 The Discord Rainbow bot secure Code Using Discord.js
 # Installation
-1.Put the roleID, serverID, bot_Token in to config.json file. <br>
+1.Put the roleID, serverID, bot_Token on each files in the config.json file. <br>
 ```
 roleID.json / serverID.json / token.json 
 ```
